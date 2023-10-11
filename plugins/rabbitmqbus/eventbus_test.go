@@ -18,7 +18,7 @@ func TestRabbitMqEventBus(t *testing.T) {
 func setup() {
 	var wg sync.WaitGroup
 	var eventHandler = NewTestMqEventHandler()
-	bus, _ := NewEventBus("amqp://guest:guest@172.18.60.244:5672")
+	bus, _ := NewEventBus("amqp://guest:guest@127.0.0.1:5672")
 	//集成事件订阅
 	eh.RegisterEventData(eventHandler.Type, eventHandler.Data)
 
